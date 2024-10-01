@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عيد ميلادك</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f0f8ff;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="firstPage">
+        <h1>ما هو عيد ميلادي؟ أتمنى أن لا تكون نسيت هههه 😂</h1>
+        <form id="birthdayForm">
+            <input type="date" id="birthdayInput" required>
+            <button type="submit">أدخل</button>
+        </form>
+    </div>
+
+    <div id="secondPage" class="hidden">
+        <h1>عيد ميلاد سعيد يا روحي</h1>
+        <p>اه نسيت يا كتكوني وكل سنه وانت طيب ان شاء لله العمر كله وبتمنالك كل الخير والسعاده فحياتك. انا كثير سعيده بوجودك فحياتي بحس بعد كل سنه بتمر واحنا مع بعض عم بزيد احبك اكثر. الله يخليك علطول اقرب شخص لقلبي.</p>
+        <p>فحبيت اهديك هده الرسالة الالكترونية اللي طبقت فيها اللي انا تعلمته ههههههه لانه بحكم المسافة اللي بيننا مش اقدر اهديك حاجة رمزية فاتمنى تعجبك و بحببببببببك ❤️</p>
+    </div>
+
+    <script>
+        document.getElementById('birthdayForm').onsubmit = function(event) {
+            event.preventDefault();
+            const inputDate = new Date(document.getElementById('birthdayInput').value);
+            const correctBirthday = new Date('2005-12-25');
+
+            if (inputDate.getTime() === correctBirthday.getTime()) {
+                document.getElementById('firstPage').classList.add('hidden');
+                document.getElementById('secondPage').classList.remove('hidden');
+            } else {
+                alert('عيد ميلاد خاطئ! حاول مرة أخرى.');
+            }
+        };
+    </script>
+</body>
+</html>
